@@ -5,12 +5,12 @@ import MainButton from "../mainbutton/MainButton";
 const UserElement = ({image, name, surname, title, userId}) => {
   return (
     <li className="list-group-item py-3 border-bottom ">
-      <div className="row g-0 ">
+      <div className="row ">
         <div className="col-2 col-md-3 col-lg-2">
           <Avatar src={image} rounded />
         </div>
         <div className="col-10 col-md-9 col-lg-10">
-          <div className="user-info ps-3 ps-xl-0 ">
+          <div className="user-info ps-3  ">
             <h5 className="h6 m-0 ">
               {name} {surname}
             </h5>

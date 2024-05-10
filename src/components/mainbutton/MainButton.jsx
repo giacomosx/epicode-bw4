@@ -11,7 +11,7 @@ const MainButton = ({children, variant, onClick}) => {
     
         default:
             return (
-                <button className='btn main-button py-1 px-3 rounded-pill fw-semibold mt-2 icon-link ' onClick={onclick}>{children}</button>
+                <button className='btn main-button py-1 px-3 rounded-pill fw-semibold mt-2 icon-link ' onClick={onClick}>{children}</button>
               )
     }
 

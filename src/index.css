@@ -1,5 +1,6 @@
 :root {
   --body-bg: #F4F2EE;
+  --text-gray: rgb(0,0,0,0.75)
 }
 
 body {
@@ -8,4 +9,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   background-color: var(--body-bg);
+}
+
+.text--gray{
+  color: var(--text-gray);
 }

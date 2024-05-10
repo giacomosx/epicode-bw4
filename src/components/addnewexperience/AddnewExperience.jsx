@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useCreateExperienceMutation } from "../../api/experienceApi";
+import './addnewexperience.css'
 
 const AddnewExperience = () => {
   const [createExperience] = useCreateExperienceMutation();
@@ -27,7 +28,7 @@ const AddnewExperience = () => {
   };
 
   return (
-    <form className="bg-white rounded border p-3 mb-3" onSubmit={onSubmit}>
+    <form className="bg-white " onSubmit={onSubmit}>
       <input
         onChange={handleChange}
         className="form-control mb-3"
@@ -69,9 +70,11 @@ const AddnewExperience = () => {
         name="description"
         placeholder="Description.."
       ></textarea>
-      <button type="submit" className="btn btn-dark ">
-        Add
+      <div className="border-top w-100 text-end ">
+      <button type="submit" className="btn py-1 px-3 rounded-pill fw-semibold mt-2 icon-link save-button">
+        Salva
       </button>
+      </div>
     </form>
   );
 };
