@@ -5,7 +5,6 @@
 
 .search-form input {
     background-color: #EDF3F8;
-    width: 17.5rem;
     transition: all 250ms linear;
     height: 2.125rem;
 }
@@ -13,9 +12,20 @@
 .search-form input:focus {
     background-color: #EDF3F8;
     box-shadow: none;
-    width: 19.375rem;
 }
 
 /* .search-form.active{
     border: 2px solid #0A66C2 !important;
 } */
+
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+    .search-form input {
+        width: 17.5rem;
+    }
+
+    .search-form input:focus {
+        width: 19.375rem;
+    }
+}

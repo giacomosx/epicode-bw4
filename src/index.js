@@ -7,15 +7,22 @@ import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-import dataReducer from './redux/fetchApiSlice'
+import { profileApi } from './api/profileApi';
+import { experienceApi } from './api/experienceApi';
+import { setupListeners } from '@reduxjs/toolkit/query';
 
 const rootReducer = combineReducers({
-  dataState : dataReducer
+  [profileApi.reducerPath]: profileApi.reducer,
+  [experienceApi.reducerPath] : experienceApi.reducer
 })
 
 const store = configureStore({
-  reducer: rootReducer
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(profileApi.middleware).concat(experienceApi.middleware)
 })
+
+setupListeners(store.dispatch)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
