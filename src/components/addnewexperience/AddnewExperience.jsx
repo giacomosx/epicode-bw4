@@ -70,8 +70,8 @@ const AddnewExperience = () => {
         name="description"
         placeholder="Description.."
       ></textarea>
-      <div className="border-top w-100 text-end ">
-      <button type="submit" className="btn py-1 px-3 rounded-pill fw-semibold mt-2 icon-link save-button">
+      <div className="border-top w-100 text-end pt-2">
+      <button type="submit" className=" py-1 px-3 rounded-pill fw-semibold mt-2 icon-link save-button">
         Salva
       </button>
       </div>
