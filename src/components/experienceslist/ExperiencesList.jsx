@@ -9,9 +9,9 @@ const ExperiencesList = ({ userId }) => {
 
   return (
     <ul className="p-0 experiences-list">
-      {isLoading && <span>Loading...</span>}
-      {error && <span>Ops...there was an error!</span>}
-      {!isLoading &&
+      {isLoading && <span>Caricamento...</span>}
+      {error && <span>Ops...Qualcosa è andato storto!</span>}
+      {!isLoading && data &&
         data.map((exp, indx) => (
           <ExperienceElement
             key={"exp" + indx}

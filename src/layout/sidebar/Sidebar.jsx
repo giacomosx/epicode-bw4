@@ -9,19 +9,19 @@ const Sidebar = () => {
   return (
     <aside className="col-md-4 col-lg-3">
       <SidebarElement sectionTitle={"Altri profili simili"} levelTitle={"h6"}>
-        {isLoading && <span>Loading...</span>}
-        {error && <span>Ops...there was an error!</span>}
-        {!isLoading && <UsersList data={data.slice(0, 5)} />}
+        {isLoading && <span>Caricamento...</span>}
+        {error && <span>Ops...Qualcosa è andato storto!</span>}
+        {!isLoading && data && <UsersList data={data.slice(0, 5)} />}
       </SidebarElement>
       <SidebarElement sectionTitle={"Espandi la tua rete"} levelTitle={"h6"}>
-        {isLoading && <span>Loading...</span>}
-        {error && <span>Ops...there was an error!</span>}
-        {!isLoading && <UsersList data={data.slice(6, 11)} />}
+        {isLoading && <span>Caricamento...</span>}
+        {error && <span>Ops...Qualcosa è andato storto!</span>}
+        {!isLoading && data && <UsersList data={data.slice(6, 11)} />}
       </SidebarElement>
       <SidebarElement sectionTitle={"Persone che potresti conoscere"} levelTitle={"h6"}>
-        {isLoading && <span>Loading...</span>}
-        {error && <span>Ops...there was an error!</span>}
-        {!isLoading && <UsersList data={data.slice(12, 17)} />}
+        {isLoading && <span>Caricamento...</span>}
+        {error && <span>Ops...Qualcosa è andato storto!</span>}
+        {!isLoading && data && <UsersList data={data.slice(12, 17)} />}
       </SidebarElement>
     </aside>
   );

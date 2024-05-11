@@ -11,7 +11,7 @@ const ProfileHeader = () => {
   const dispatch = useDispatch()
 
   return (
-    <section className="main-header rounded-3 bg-white mb-3 border">
+    <section className="main-header rounded-3 bg-white mb-2 border">
       <div className="main-header__header overflow-hidden ">
         <img
           src="https://picsum.photos/640/480"
@@ -20,22 +20,21 @@ const ProfileHeader = () => {
         />
       </div>
       <div className="main-header__body position-relative px-4 pb-4 ">
-        {isLoading && <span>Loading...</span>}
-        {error && <span>Ops...there was an error!</span>}
-        {!isLoading && (
-          <>
+        {isLoading && <span>Caricamento...</span>}
+        {!isLoading && data &&(
+            <>
             <div className="actions text-end pt-2">
               <ActionButton iconName={"pencil-outline"} onClick={() => {
-                    dispatch(setProfileState())
-                    dispatch(showModalExp())
-              }}/>
+                  dispatch(setProfileState())
+                  dispatch(showModalExp())
+                }}/>
             </div>
             <div className="main-avatar">
               <img
                 src="https://placebeard.it/400"
                 alt="Profile header pic"
                 className="w-100 h-100 object-fit-cover "
-              />
+                />
             </div>
             <div className="user-info">
               <h2 className="h4">
@@ -47,6 +46,7 @@ const ProfileHeader = () => {
             </div>
           </>
         )}
+        {error && <span>Ops...there was an error!</span>}
       </div>
     </section>
   );

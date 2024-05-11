@@ -3,7 +3,7 @@ import { useCreateExperienceMutation } from "../../api/experienceApi";
 import './addnewexperience.css'
 
 const AddnewExperience = () => {
-  const [createExperience] = useCreateExperienceMutation();
+  const [createExperience, {isLoading, isSuccess, isError}] = useCreateExperienceMutation();
 
   const [newExperience, setExperience] = useState({});
 
@@ -29,6 +29,7 @@ const AddnewExperience = () => {
 
   return (
     <form className="bg-white " onSubmit={onSubmit}>
+      
       <input
         onChange={handleChange}
         className="form-control mb-3"
@@ -71,6 +72,11 @@ const AddnewExperience = () => {
         placeholder="Description.."
       ></textarea>
       <div className="border-top w-100 text-end pt-2">
+      <div className="text-start">
+      {isLoading && <span>Invio...</span>}
+      {isSuccess && <span className="text-success">Esperienza aggiunta</span>}
+      {isError && <span className="text-danger">Ops..qualcosa è andato storto!</span>}
+      </div>
       <button type="submit" className=" py-1 px-3 rounded-pill fw-semibold mt-2 icon-link save-button">
         Salva
       </button>
