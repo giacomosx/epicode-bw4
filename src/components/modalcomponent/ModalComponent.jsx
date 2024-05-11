@@ -12,7 +12,7 @@ function ModalComponent({ children, title }) {
       className="modal show"
       style={{ display: "block", position: "initial" }}
     >
-      <Modal show={modalShowState} onHide={() => dispatch(hideModalExp())}>
+      <Modal centered show={modalShowState} onHide={() => dispatch(hideModalExp())}>
         <Modal.Header closeButton>
           <Modal.Title className="h5">{title}</Modal.Title>
         </Modal.Header>
