@@ -2,7 +2,7 @@ import React from "react";
 import Avatar from "../avatar/Avatar";
 import { useParams } from "react-router-dom";
 import ActionButton from "../actionbutton/ActionButton";
-import { showModalExp } from "../../redux/modalExpSlice";
+import { showModalExp, setEditExpState } from "../../redux/modalExpSlice";
 import { selectAnExperience } from "../../redux/experienceSelectedSpice";
 import { useDispatch } from "react-redux";
 
@@ -20,6 +20,7 @@ const ExperienceElement = ({idExp, image, role, company, area, startDate, endDat
             {edit && <div className="float-end "><ActionButton iconName={'pencil'} onClick={() => {
               dispatch(showModalExp())
               dispatch(selectAnExperience(idExp))
+              dispatch(setEditExpState())
             }}/></div>}
             <h5 className="h6 mb-1 fw-semibold ">{role}</h5>
             <span className="d-block">{company}</span>
