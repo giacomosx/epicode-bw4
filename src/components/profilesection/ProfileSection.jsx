@@ -2,9 +2,11 @@ import React from "react";
 import ActionButton from "../actionbutton/ActionButton";
 import { showModalExp } from "../../redux/modalExpSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const ProfileSection = ({ sectionTitle, levelTitle, children, actions }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   return (
     <section className="bg-white rounded-3 p-4 border mb-2">
@@ -18,7 +20,7 @@ const ProfileSection = ({ sectionTitle, levelTitle, children, actions }) => {
               iconName={"add"}
               onClick={() => dispatch(showModalExp())}
             />
-            <ActionButton iconName={"pencil-outline"} />
+            <ActionButton iconName={"pencil-outline"} onClick={() => navigate(`/editexperiences/${true}`)}/>
           </div>
         )}
       </div>

@@ -31,7 +31,7 @@ const ProfileHeader = () => {
             </div>
             <div className="main-avatar">
               <img
-                src="https://placebeard.it/400"
+                src={(data && data.image) || 'https://placebeard.it/400'}
                 alt="Profile header pic"
                 className="w-100 h-100 object-fit-cover "
                 />

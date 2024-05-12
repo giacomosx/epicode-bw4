@@ -1,15 +1,26 @@
 import React from "react";
 import Avatar from "../avatar/Avatar";
+import { useParams } from "react-router-dom";
+import ActionButton from "../actionbutton/ActionButton";
+import { showModalExp } from "../../redux/modalExpSlice";
+import { selectAnExperience } from "../../redux/experienceSelectedSpice";
+import { useDispatch } from "react-redux";
 
-const ExperienceElement = ({ role, company, area, startDate, endDate, description}) => {
+const ExperienceElement = ({idExp, image, role, company, area, startDate, endDate, description}) => {
+  const {edit} = useParams()
+  const dispatch = useDispatch()
   return (
     <li className=" list-group-item mb-4 pb-3 border-bottom">
       <div className="row g-3 g-md-0 g-lg-5 g-xxl-0 ">
         <div className="col-2 col-lg-1 ">
-          <Avatar src={'https://placebeard.it/600'} alt={'Experience img'} />
+          <Avatar src={image} alt={'Experience img'} />
         </div>
         <div className="col-10 col-lg-11">
           <div className="heading lh-sm ps-1 small ">
+            {edit && <div className="float-end "><ActionButton iconName={'pencil'} onClick={() => {
+              dispatch(showModalExp())
+              dispatch(selectAnExperience(idExp))
+            }}/></div>}
             <h5 className="h6 mb-1 fw-semibold ">{role}</h5>
             <span className="d-block">{company}</span>
             <span className="text-secondary ">

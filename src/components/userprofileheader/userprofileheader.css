@@ -1,0 +1,19 @@
+.main-header__header {
+    max-height: 200px;
+}
+
+.main-header__header img {
+    object-position: bottom;
+    object-fit: cover;
+}
+
+.main-avatar {
+    width: 152px;
+    height: 152px;
+    border-radius: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 1.75rem;
+    top: 0;
+    transform: translateY(-70%);
+}

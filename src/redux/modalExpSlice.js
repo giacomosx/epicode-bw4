@@ -18,11 +18,14 @@ const modalExpSlice = createSlice({
     },
     setProfileState: (state) => {
       state.type = 'profile'
+    },
+    setEditExpState: (state) => {
+      state.type = 'editexp'
     }
   },
 });
 
 export const expModalState = state => state.experienceModalState.showModal
 export const expModalType = state => state.experienceModalState.type
-export const {showModalExp, hideModalExp, setProfileState} = modalExpSlice.actions
+export const {showModalExp, hideModalExp, setProfileState, setEditExpState} = modalExpSlice.actions
 export default modalExpSlice.reducer

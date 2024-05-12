@@ -11,10 +11,12 @@ import { profileApi } from './api/profileApi';
 import { experienceApi } from './api/experienceApi';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import modalExperienceReducer from './redux/modalExpSlice'
+import experienceSelectedReducer from './redux/experienceSelectedSpice'
 
 
 const rootReducer = combineReducers({
   experienceModalState: modalExperienceReducer,
+  experienceSelectedState: experienceSelectedReducer,
   [profileApi.reducerPath]: profileApi.reducer,
   [experienceApi.reducerPath] : experienceApi.reducer
 })

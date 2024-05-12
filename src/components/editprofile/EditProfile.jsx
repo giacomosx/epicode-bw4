@@ -8,7 +8,7 @@ const EditProfile = () => {
   const { data } = useGetMyProfileQuery();
   const [editProfile, { isLoading, isSuccess, isError }] =
     useEdiProfileMutation();
-  const [mod, setMod] = useState({});
+  const [mod, setMod] = useState(data);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +37,7 @@ const EditProfile = () => {
         type="text"
         name="name"
         placeholder="Name.."
-        value={data.name}
+        value={mod.name}
       />
       <input
         onChange={handleChange}
@@ -45,7 +45,7 @@ const EditProfile = () => {
         type="text"
         name="surname"
         placeholder="Surname.."
-        value={data.surname}
+        value={mod.surname}
       />
       <input
         onChange={handleChange}
@@ -53,7 +53,7 @@ const EditProfile = () => {
         type="text"
         name="username"
         placeholder="Username.."
-        value={data.username}
+        value={mod.username}
       />
       <input
         onChange={handleChange}
@@ -61,7 +61,7 @@ const EditProfile = () => {
         type="text"
         name="title"
         placeholder="Title.."
-        value={data.title}
+        value={mod.title}
       />
       <input
         onChange={handleChange}
@@ -69,7 +69,7 @@ const EditProfile = () => {
         type="text"
         name="area"
         placeholder="Area.."
-        value={data.area}
+        value={mod.area}
       />
       <input
         onChange={handleChange}
@@ -77,14 +77,14 @@ const EditProfile = () => {
         type="email"
         name="email"
         placeholder="E-mail.."
-        value={data.email}
+        value={mod.email}
       />
       <textarea
         onChange={handleChange}
         className="form-control mb-3"
         name="bio"
         placeholder="Bio.."
-        value={data.bio}
+        value={mod.bio}
       ></textarea>
       <div className="border-top w-100 text-end pt-2">
         <div className="text-start">

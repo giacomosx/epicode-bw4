@@ -18,24 +18,42 @@ export const experienceApi = createApi({
   endpoints: (builder) => ({
     getExperiences: builder.query({
       query: (userId) => `${userId}/experiences`,
-      providesTags: ['Experiences']
+      providesTags: ["Experiences"],
+    }),
+    getExperience: builder.query({
+      query: ({userId, expId}) => `${userId}/experiences/${expId}`,
+      providesTags: ["Experiences"],
     }),
     createExperience: builder.mutation({
-        query: ({userId, newExperience}) => ({
-            url: `${userId}/experiences`,
-            method: 'POST',
-            body: newExperience,
-        }),
-        invalidatesTags: ['Experiences']
+      query: ({ userId, newExperience }) => ({
+        url: `${userId}/experiences`,
+        method: "POST",
+        body: newExperience,
+      }),
+      invalidatesTags: ["Experiences"],
     }),
     deleteExperience: builder.mutation({
-        query: ({userId, expId}) => ({
-            url: `${userId}/experiences/${expId}`,
-            method: 'DELETE'
-        }),
-        invalidatesTags: ['Experiences']
-    })
+      query: ({ userId, expId }) => ({
+        url: `${userId}/experiences/${expId}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Experiences"],
+    }),
+    editExperience: builder.mutation({
+      query: ({ userId, expId, expModified }) => ({
+        url: `${userId}/experiences/${expId}`,
+        method: "PUT",
+        body: expModified
+      }),
+      invalidatesTags: ["Experiences"],
+    }),
   }),
 });
 
-export const { useGetExperiencesQuery,  useCreateExperienceMutation, useDeleteExperienceMutation } = experienceApi;
+export const {
+  useGetExperiencesQuery,
+  useCreateExperienceMutation,
+  useDeleteExperienceMutation,
+  useEditExperienceMutation,
+  useGetExperienceQuery,
+} = experienceApi;

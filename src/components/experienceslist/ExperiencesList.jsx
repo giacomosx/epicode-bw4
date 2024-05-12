@@ -14,6 +14,8 @@ const ExperiencesList = ({ userId }) => {
       {!isLoading && data &&
         data.map((exp, indx) => (
           <ExperienceElement
+            idExp={exp._id}
+            image={exp.image || 'https://placebeard.it/400'}
             key={"exp" + indx}
             role={exp.role}
             company={exp.company}

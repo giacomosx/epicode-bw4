@@ -13,6 +13,7 @@ const UsersList = ({ data }) => {
             name={user.name}
             surname={user.surname}
             title={user.title}
+            userId={user._id}
           />
         ))}
     </ul>
